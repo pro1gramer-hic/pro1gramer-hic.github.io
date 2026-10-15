@@ -1600,10 +1600,18 @@ pages.contact = () => ({
       if ($("#ctWeb").value) return;
       if (first){ first.focus(); res.innerHTML = ""; return; }
       const btn = e.target.querySelector('[type="submit"]'); btn.disabled = true; btn.innerHTML = `<span class="dots" aria-hidden="true"><i></i><i></i><i></i></span>Envoi en cours`;
-      setTimeout(() => {
-        btn.disabled = false; btn.textContent = "Envoyer le message";
-        res.innerHTML = `<div class="notice bad">${ico.alert}<p>Message non envoyé : le service d'envoi n'est pas encore configuré. Écrivez-moi directement à ${CONTACT.email}, votre texte reste dans le formulaire.</p></div>`;
-      }, reduced() ? 0 : 900);
+      const form = e.target, val = (id) => $("#" + id).value.trim();
+      const done = (ok, html) => { btn.disabled = false; btn.textContent = "Envoyer le message"; res.innerHTML = `<div class="notice ${ok ? "ok" : "bad"}">${ok ? ico.check : ico.alert}<p>${html}</p></div>`; };
+      /* Envoi via FormSubmit : le message arrive dans la boîte de Franck */
+      fetch("https://formsubmit.co/ajax/" + CONTACT.email, {
+        method:"POST",
+        headers:{ "Content-Type":"application/json", "Accept":"application/json" },
+        body:JSON.stringify({ name:val("ctName"), email:val("ctMail"), _replyto:val("ctMail"), _subject:"Portfolio : " + val("ctSubj"), message:val("ctMsg"), _template:"table", _captcha:"false" })
+      }).then(r => r.json()).then(d => {
+        if (String(d.success) === "true"){ form.reset(); done(true, "Message envoyé. Je vous réponds dès que possible."); }
+        else if (/activat/i.test(d.message || "")) done(false, `L'envoi n'est pas encore activé. Écrivez-moi directement à ${CONTACT.email}, votre texte reste dans le formulaire.`);
+        else done(false, `Message non envoyé. Réessayez dans un instant, ou écrivez-moi directement à ${CONTACT.email}.`);
+      }).catch(() => done(false, `Message non envoyé : la connexion a échoué. Réessayez dans un instant, ou écrivez-moi directement à ${CONTACT.email}.`));
     });
   }
 });
@@ -1958,7 +1966,7 @@ const EN = {
 "Message non envoyé : le service d'envoi n'est pas encore configuré. Écrivez-moi directement à ashavoce01@gmail.com, votre texte reste dans le formulaire.":"Message not sent: the sending service isn't set up yet. Email me directly at ashavoce01@gmail.com, your text stays in the form.",
 "Portfolio de Franck Ash Paolo Avoce, étudiant en technologies de l'information.":"Portfolio of Franck Ash Paolo Avoce, information technology student.",
 "Projets web, programmation, réseaux, cybersécurité et expériences de Franck Ash Paolo Avoce.":"Web, programming, networking and cybersecurity projects by Franck Ash Paolo Avoce.",
-"Difficultés":"Challenges","Démarche":"Approach","Objectifs":"Goals","Apprentissages":"What I learned"
+"Message envoyé. Je vous réponds dès que possible.":"Message sent. I'll get back to you as soon as I can.","L'envoi n'est pas encore activé. Écrivez-moi directement à ashavoce01@gmail.com, votre texte reste dans le formulaire.":"Sending isn't activated yet. Email me directly at ashavoce01@gmail.com, your text stays in the form.","Message non envoyé. Réessayez dans un instant, ou écrivez-moi directement à ashavoce01@gmail.com.":"Message not sent. Try again in a moment, or email me directly at ashavoce01@gmail.com.","Message non envoyé : la connexion a échoué. Réessayez dans un instant, ou écrivez-moi directement à ashavoce01@gmail.com.":"Message not sent: the connection failed. Try again in a moment, or email me directly at ashavoce01@gmail.com.","Difficultés":"Challenges","Démarche":"Approach","Objectifs":"Goals","Apprentissages":"What I learned"
 };
 const MONTHS = { janvier:"January", février:"February", mars:"March", avril:"April", mai:"May", juin:"June", juillet:"July", août:"August", septembre:"September", octobre:"October", novembre:"November", décembre:"December" };
 const STATUS_EN = { "terminé":"completed", "en cours":"in progress", "expérimental":"experimental" };

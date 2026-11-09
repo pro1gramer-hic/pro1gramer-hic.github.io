@@ -1,0 +1,990 @@
+{
+ "version": 1,
+ "hero": {
+  "title": {
+   "fr": "Étudiant en technologies de l'information",
+   "en": "Information technology student"
+  },
+  "phrase": {
+   "fr": "Avoir mon propre Jarvis à la maison, c'était un rêve d'enfant. L'informatique en fait un projet : données, interfaces, solutions, j'explore tout ce qui peut m'en rapprocher.",
+   "en": "Having my own Jarvis at home was a childhood dream. Computing turns it into a project: data, interfaces, solutions. I explore everything that gets me closer."
+  }
+ },
+ "interests": [
+  {
+   "fr": "Développement web et programmation",
+   "en": "Web development and programming"
+  },
+  {
+   "fr": "Cybersécurité",
+   "en": "Cybersecurity"
+  },
+  {
+   "fr": "Réseaux et systèmes",
+   "en": "Networks and systems"
+  },
+  {
+   "fr": "Intelligence artificielle et données",
+   "en": "AI and data"
+  },
+  {
+   "fr": "Recherche et expérimentation technique",
+   "en": "Technical research and experimentation"
+  }
+ ],
+ "about": {
+  "intro": {
+   "fr": "Je suis étudiant en fin de première année à Epitech Bénin, en technologies de l'information. Avant ça, j'ai obtenu un bac E et un DT en fabrication mécanique la même année, puis j'ai fait une première année de génie mécanique à l'EPAC. J'aime la tech et je veux m'y faire une place, avec une idée en tête : créer un jour un outil utile que tout le monde utilisera.",
+   "en": "I'm finishing my first year in information technology at Epitech Benin. Before that, I earned a Series E baccalaureate and a technical diploma in mechanical manufacturing in the same year, then completed a first year of mechanical engineering at EPAC. I love tech and I want to make my mark in it, with one goal in mind: someday build a useful tool that everyone will use."
+  },
+  "blocks": [
+   {
+    "title": {
+     "fr": "Mon parcours",
+     "en": "My background"
+    },
+    "text": {
+     "fr": "Mon parcours est simple. Avec le bac E, le DT en fabrication mécanique et une année de génie mécanique à l'EPAC, je maîtrise déjà la mécanique et l'automatisme, et j'ai quelques notions d'électronique. Il me manquait l'informatique pour avoir tout le tableau.",
+     "en": "My path is simple. With the Series E baccalaureate, the technical diploma in mechanical manufacturing and a year of mechanical engineering at EPAC, I already master mechanics and automation, and I know some electronics. Computer science was the missing piece to see the whole picture."
+    }
+   },
+   {
+    "title": {
+     "fr": "Ce qui m'intéresse",
+     "en": "What interests me"
+    },
+    "text": {
+     "fr": "Enfant, j'étais attiré par les robots et les machines qui fonctionnent toutes seules. Aujourd'hui, j'aime structurer et analyser des données, réfléchir à une interface et à ses fonctionnalités, et créer des solutions à de vrais problèmes. Avec la mécanique, l'électronique et maintenant l'informatique, j'ai les trois briques pour construire un jour mon propre Jarvis.",
+     "en": "As a kid, I was drawn to robots and machines that run on their own. Today, I enjoy structuring and analyzing data, thinking through an interface and its features, and building solutions to real problems. With mechanics, electronics and now computer science, I have the three building blocks to one day build my own Jarvis."
+    }
+   },
+   {
+    "title": {
+     "fr": "Ma façon d'apprendre",
+     "en": "How I learn"
+    },
+    "text": {
+     "fr": "J'apprends en me lançant directement dans un projet. J'explore toutes les pistes possibles, à mon rythme, et je comprends en faisant. Pour tenir la distance, je travaille avec la méthode Pomodoro : des sessions courtes et concentrées, entrecoupées de pauses.",
+     "en": "I learn by jumping straight into a project. I explore every possible path at my own pace, and I understand by doing. To keep going over time, I use the Pomodoro technique: short, focused sessions with breaks in between."
+    }
+   },
+   {
+    "title": {
+     "fr": "Mes principes de travail",
+     "en": "My work principles"
+    },
+    "text": {
+     "fr": "Je finis ce que je commence. Quand je bloque, je demande de l'aide plutôt que de tourner en rond. Je soigne les détails et je tiens les délais.",
+     "en": "I finish what I start. When I'm stuck, I ask for help instead of going in circles. I care about details and I meet deadlines."
+    }
+   }
+  ],
+  "goalsShort": {
+   "fr": "Comprendre l'IA dans son ensemble et créer mon propre LLM dédié au code. Je continue d'affiner mon assistant IA. Côté code, je veux progresser en Go, Python, Haskell et C, et découvrir de nouveaux langages. Je veux aussi aller plus loin en cybersécurité, obtenir le plus de certifications possible et participer au développement de projets dans une startup.",
+   "en": "Understand AI as a whole and build my own LLM dedicated to code. I keep refining my AI assistant. On the coding side, I want to get better at Go, Python, Haskell and C, and pick up new languages. I also want to go further in cybersecurity, earn as many certifications as I can and help build products at a startup."
+  },
+  "goalsLong": {
+   "fr": "Créer un outil utile que tout le monde utilisera, de ceux qui changent la façon de travailler, comme les grandes révolutions de l'industrie.",
+   "en": "Build a useful tool that everyone will use, the kind that changes how people work, like the great industrial revolutions."
+  }
+ },
+ "contact": {
+  "github": "https://github.com/pro1gramer-hic",
+  "linkedin": "https://www.linkedin.com/in/franck-ash-paolo-avoce-299a21443/",
+  "email": "ashavoce01@gmail.com",
+  "phone": "+2290155220188"
+ },
+ "formation": [
+  {
+   "title": {
+    "fr": "Licence en informatique, 1re année",
+    "en": "Bachelor's in computer science, first year"
+   },
+   "school": "Epitech Bénin",
+   "place": {
+    "fr": "Cotonou, Bénin",
+    "en": "Cotonou, Benin"
+   },
+   "period": {
+    "fr": "Janvier 2026 – aujourd'hui",
+    "en": "January 2026 – present"
+   },
+   "current": true
+  },
+  {
+   "title": {
+    "fr": "Licence en génie mécanique, 1re année",
+    "en": "Bachelor's in mechanical engineering, first year"
+   },
+   "school": "EPAC",
+   "place": {
+    "fr": "Abomey-Calavi, Bénin",
+    "en": "Abomey-Calavi, Benin"
+   },
+   "period": {
+    "fr": "Septembre 2024 – août 2025",
+    "en": "September 2024 – August 2025"
+   },
+   "current": false
+  },
+  {
+   "title": {
+    "fr": "Baccalauréat série E",
+    "en": "Baccalaureate, Series E (math and technology)"
+   },
+   "school": "Lycée technique Coulibaly",
+   "place": {
+    "fr": "Cotonou, Bénin",
+    "en": "Cotonou, Benin"
+   },
+   "period": {
+    "fr": "Septembre 2023 – juin 2024",
+    "en": "September 2023 – June 2024"
+   },
+   "current": false
+  },
+  {
+   "title": {
+    "fr": "DT en fabrication mécanique",
+    "en": "Technical diploma in mechanical manufacturing"
+   },
+   "school": "Lycée technique Coulibaly",
+   "place": {
+    "fr": "Cotonou, Bénin",
+    "en": "Cotonou, Benin"
+   },
+   "period": {
+    "fr": "Septembre 2023 – juin 2024",
+    "en": "September 2023 – June 2024"
+   },
+   "current": false
+  }
+ ],
+ "hard": [
+  {
+   "group": {
+    "fr": "Langages",
+    "en": "Languages"
+   },
+   "items": [
+    {
+     "fr": "C",
+     "en": "C"
+    },
+    {
+     "fr": "Python",
+     "en": "Python"
+    },
+    {
+     "fr": "Go",
+     "en": "Go"
+    },
+    {
+     "fr": "Haskell",
+     "en": "Haskell"
+    },
+    {
+     "fr": "Bash",
+     "en": "Bash"
+    },
+    {
+     "fr": "JavaScript",
+     "en": "JavaScript"
+    },
+    {
+     "fr": "TypeScript",
+     "en": "TypeScript"
+    }
+   ]
+  },
+  {
+   "group": {
+    "fr": "Web",
+    "en": "Web"
+   },
+   "items": [
+    {
+     "fr": "HTML",
+     "en": "HTML"
+    },
+    {
+     "fr": "CSS",
+     "en": "CSS"
+    },
+    {
+     "fr": "Tailwind CSS",
+     "en": "Tailwind CSS"
+    },
+    {
+     "fr": "API REST",
+     "en": "REST API"
+    },
+    {
+     "fr": "FastAPI",
+     "en": "FastAPI"
+    }
+   ]
+  },
+  {
+   "group": {
+    "fr": "Bases de données",
+    "en": "Databases"
+   },
+   "items": [
+    {
+     "fr": "SQL",
+     "en": "SQL"
+    },
+    {
+     "fr": "PostgreSQL",
+     "en": "PostgreSQL"
+    }
+   ]
+  },
+  {
+   "group": {
+    "fr": "Outils et DevOps",
+    "en": "Tools and DevOps"
+   },
+   "items": [
+    {
+     "fr": "Git",
+     "en": "Git"
+    },
+    {
+     "fr": "GitHub",
+     "en": "GitHub"
+    },
+    {
+     "fr": "CI/CD",
+     "en": "CI/CD"
+    },
+    {
+     "fr": "Docker",
+     "en": "Docker"
+    },
+    {
+     "fr": "Tests unitaires",
+     "en": "Unit tests"
+    },
+    {
+     "fr": "n8n",
+     "en": "n8n"
+    }
+   ]
+  },
+  {
+   "group": {
+    "fr": "Systèmes",
+    "en": "Systems"
+   },
+   "items": [
+    {
+     "fr": "Linux",
+     "en": "Linux"
+    },
+    {
+     "fr": "Configuration de systèmes Unix",
+     "en": "Unix system configuration"
+    },
+    {
+     "fr": "Machines virtuelles",
+     "en": "Virtual machines"
+    }
+   ]
+  },
+  {
+   "group": {
+    "fr": "Cybersécurité",
+    "en": "Cybersecurity"
+   },
+   "items": [
+    {
+     "fr": "OWASP",
+     "en": "OWASP"
+    },
+    {
+     "fr": "CTF : OSINT",
+     "en": "CTF: OSINT"
+    },
+    {
+     "fr": "CTF : crypto",
+     "en": "CTF: crypto"
+    },
+    {
+     "fr": "CTF : web",
+     "en": "CTF: web"
+    },
+    {
+     "fr": "CTF : forensic",
+     "en": "CTF: forensics"
+    },
+    {
+     "fr": "CTF : misc",
+     "en": "CTF: misc"
+    }
+   ]
+  },
+  {
+   "group": {
+    "fr": "IA",
+    "en": "AI"
+   },
+   "items": [
+    {
+     "fr": "Prompt engineering",
+     "en": "Prompt engineering"
+    }
+   ]
+  },
+  {
+   "group": {
+    "fr": "Mécanique et électronique",
+    "en": "Mechanics and electronics"
+   },
+   "items": [
+    {
+     "fr": "Mécanique",
+     "en": "Mechanics"
+    },
+    {
+     "fr": "Automatisme",
+     "en": "Automation"
+    },
+    {
+     "fr": "Notions d'électronique",
+     "en": "Basic electronics"
+    }
+   ]
+  }
+ ],
+ "soft": [
+  {
+   "group": {
+    "fr": "Façon de travailler",
+    "en": "How I work"
+   },
+   "items": [
+    {
+     "fr": "Autonomie",
+     "en": "Autonomy"
+    },
+    {
+     "fr": "Rigueur",
+     "en": "Rigor"
+    },
+    {
+     "fr": "Gestion du temps",
+     "en": "Time management"
+    }
+   ]
+  },
+  {
+   "group": {
+    "fr": "Avec les autres",
+    "en": "With others"
+   },
+   "items": [
+    {
+     "fr": "Esprit d'équipe",
+     "en": "Team spirit"
+    },
+    {
+     "fr": "Sens de la communication",
+     "en": "Communication skills"
+    }
+   ]
+  },
+  {
+   "group": {
+    "fr": "Attitude",
+    "en": "Attitude"
+   },
+   "items": [
+    {
+     "fr": "Adaptabilité",
+     "en": "Adaptability"
+    },
+    {
+     "fr": "Dynamisme",
+     "en": "Energy"
+    }
+   ]
+  }
+ ],
+ "techRel": {
+  "preferred": [
+   "C",
+   "Python",
+   "Go",
+   "Haskell",
+   "Bash"
+  ],
+  "explore": [
+   "n8n",
+   "Docker",
+   "Linux",
+   "JavaScript",
+   "TypeScript",
+   "SQL"
+  ],
+  "discover": [
+   "Rust",
+   "C++",
+   "Swift"
+  ]
+ },
+ "projects": [
+  {
+   "id": "p-tgv",
+   "slug": "tardis",
+   "featured": true,
+   "title": {
+    "fr": "TARDIS, prévision des retards TGV",
+    "en": "TARDIS, TGV delay forecasting"
+   },
+   "desc": {
+    "fr": "Prévoir le retard moyen d'un TGV selon le trajet et le mois, à partir de huit ans de données ouvertes de la SNCF.",
+    "en": "Forecasting the average delay of a French high-speed train by route and month, from eight years of SNCF open data."
+   },
+   "cat": "ia",
+   "status": "termine",
+   "period": {
+    "fr": "",
+    "en": ""
+   },
+   "start": "2026-06",
+   "updated": "2026-10-15",
+   "tech": [
+    "Python",
+    "pandas",
+    "NumPy",
+    "scikit-learn",
+    "Plotly",
+    "Streamlit",
+    "pytest",
+    "ruff",
+    "GitHub Actions"
+   ],
+   "keys": [
+    "sncf",
+    "retard",
+    "train",
+    "prévision",
+    "machine learning",
+    "données",
+    "tableau de bord"
+   ],
+   "img": "images/tardis1.jpg",
+   "gallery": [
+    {
+     "src": "images/tardis1.jpg",
+     "caption": {
+      "fr": "Mon trajet : le retard moyen estimé pour une liaison et un mois",
+      "en": "My trip: the estimated average delay for a route and a month"
+     }
+    },
+    {
+     "src": "images/tardis2.jpg",
+     "caption": {
+      "fr": "Quand partir : les mois de départ comparés sur huit ans",
+      "en": "When to go: departure months compared over eight years"
+     }
+    },
+    {
+     "src": "images/tardis3.jpg",
+     "caption": {
+      "fr": "Comprendre : les gares les plus et les moins ponctuelles",
+      "en": "Understand: the most and least punctual stations"
+     }
+    }
+   ],
+   "sections": {
+    "contexte": {
+     "fr": "Projet de groupe Epitech (module G-AIA-210), à trois, sur les données ouvertes de régularité des TGV publiées par la SNCF : de 2018 à 2025, soit 96 mois, 130 liaisons, 59 gares de départ et plus de trois millions de trains.",
+     "en": "Epitech group project (G-AIA-210 module), team of three, using the open TGV punctuality data published by SNCF, the French rail operator: 2018 to 2025, that is 96 months, 130 routes, 59 departure stations and more than three million trains."
+    },
+    "role": {
+     "fr": "Les étapes 3 et 4 du sujet et les bonus : le modèle de prévision et le tableau de bord. Axel Hounsou a tenu le nettoyage et l'exploration des données, Chamss-Dine Agbizounon la visualisation et l'analyse.",
+     "en": "Steps 3 and 4 of the brief plus the bonuses: the forecasting model and the dashboard. Axel Hounsou handled data cleaning and exploration, Chamss-Dine Agbizounon visualization and analysis."
+    },
+    "fonction": {
+     "fr": "On choisit un trajet et un mois. L'outil annonce le retard moyen à l'arrivée avec une fourchette, puis compare les douze mois de l'année pour aider à choisir sa date. Exemple : de Bordeaux à Paris Montparnasse, environ 9 minutes en juillet contre 4,5 en mai.",
+     "en": "Pick a route and a month. The tool predicts the average arrival delay with a range, then compares all twelve months to help you pick your travel date. Example: Bordeaux to Paris Montparnasse, about 9 minutes in July versus 4.5 in May."
+    },
+    "modele": {
+     "fr": "Six approches comparées à partir d'une baseline, du modèle linéaire aux forêts aléatoires et au réseau de neurones. Modèle retenu : HistGradientBoostingRegressor, réglé par validation croisée. Sur des mois jamais vus à l'entraînement : erreur moyenne de 1,97 minute, R² de 0,50, et 93 estimations sur 100 à moins de cinq minutes du réel.",
+     "en": "Six approaches compared against a baseline, from linear regression to random forests and a neural network. Model chosen: HistGradientBoostingRegressor, tuned with cross-validation. On months never seen during training: mean error of 1.97 minutes, R² of 0.50, and 93 estimates out of 100 within five minutes of the actual delay."
+    },
+    "decision": {
+     "fr": "Trois colonnes du fichier sont calculées à partir des retards du mois qu'on cherche justement à prévoir. En les gardant, le R² montait à 0,86. Je les ai retirées : le jour où l'on pose la question, ce mois n'a pas encore eu lieu et ces colonnes n'existent pas. Les chiffres sont plus modestes, ils sont vrais en production.",
+     "en": "Three columns in the dataset are computed from the delays of the very month we are trying to predict. Keeping them pushed R² up to 0.86. I removed them: on the day someone asks, that month hasn't happened yet and those columns don't exist. The numbers are more modest, but they hold up in production."
+    },
+    "dashboard": {
+     "fr": "Streamlit, en français et en anglais, avec trois écrans : l'estimation avant réservation, la comparaison des douze mois, et la lecture par gare et par cause de retard. Graphiques Plotly, export des données en un clic.",
+     "en": "Streamlit, in French and English, with three screens: an estimate before booking, a twelve-month comparison, and a breakdown by station and by delay cause. Plotly charts and one-click data export."
+    },
+    "qualite": {
+     "fr": "Tests avec pytest, formatage et lint avec ruff, intégration continue sur GitHub Actions.",
+     "en": "Tests with pytest, formatting and linting with ruff, continuous integration on GitHub Actions."
+    }
+   },
+   "links": {}
+  },
+  {
+   "id": "p-epilot",
+   "slug": "epilot",
+   "featured": true,
+   "title": {
+    "fr": "EPILOT",
+    "en": "EPILOT"
+   },
+   "desc": {
+    "fr": "Une application web déployée qui lit l'intranet Epitech et en tire un planning de travail personnalisé.",
+    "en": "A deployed web app that reads the Epitech intranet and turns it into a personal study schedule."
+   },
+   "cat": "web",
+   "status": "termine",
+   "period": {
+    "fr": "2026",
+    "en": "2026"
+   },
+   "start": "2026-09",
+   "updated": "2026-10-01",
+   "tech": [
+    "Python",
+    "FastAPI",
+    "React",
+    "TypeScript",
+    "Tailwind CSS",
+    "PostgreSQL",
+    "Docker",
+    "Azure"
+   ],
+   "keys": [
+    "planning",
+    "epitech",
+    "intranet",
+    "assistant",
+    "api"
+   ],
+   "img": "images/epilot.jpg",
+   "gallery": [],
+   "sections": {
+    "contexte": {
+     "fr": "L'intranet affiche les projets, les échéances et l'emploi du temps, mais n'organise rien. Avec plusieurs projets de groupe en parallèle, on découvre souvent un rendu trop tard.",
+     "en": "The intranet shows projects, deadlines and the timetable, but organizes nothing. With several group projects running at once, students often find out about a deadline too late."
+    },
+    "role": {
+     "fr": "Backend et algorithmes : la génération des plannings, les méthodes de travail et l'API. APKAN Prunelle a tenu le frontend et l'UX, SOVOEKE Josaphat la sécurité, l'intégration à l'intranet et la coordination.",
+     "en": "Backend and algorithms: schedule generation, study methods and the API. APKAN Prunelle handled the frontend and UX, SOVOEKE Josaphat security, intranet integration and team coordination."
+    },
+    "fonction": {
+     "fr": "Elle récupère les projets, les échéances et les activités, puis répartit le travail jour par jour jusqu'à chaque rendu. Le planning se recalcule quand l'intranet change, et des notifications rappellent ce qui arrive. Aucune saisie : les données viennent de l'intranet. EPILOT pose des blocs de travail avant chaque échéance, jamais sur un cours, en respectant le sommeil et les repas. Le planning se modifie à la main ou en parlant à un assistant en français, par exemple « déplace 42sh à demain 13h ».",
+     "en": "It pulls projects, deadlines and activities, then spreads the work day by day up to each due date. The schedule recalculates when the intranet changes, and notifications remind you what's coming. No data entry: everything comes from the intranet. EPILOT places work blocks before each deadline, never over a class, while respecting sleep and meals. You can edit the schedule by hand or by talking to an assistant in French, for example \"move 42sh to tomorrow 1pm\"."
+    },
+    "technique": {
+     "fr": "Quatre briques qui ne communiquent que par l'API. Backend en Python 3.12 avec FastAPI, SQLAlchemy et APScheduler. Frontend en React 19, TypeScript, Vite et Tailwind, installable comme une application (PWA). Connexion sans mot de passe, cookie chiffré en AES-256-GCM, JWT et limitation de débit. Conteneurs Docker sur Azure Container Apps, avec PostgreSQL.",
+     "en": "Four components that only talk through the API. Backend in Python 3.12 with FastAPI, SQLAlchemy and APScheduler. Frontend in React 19, TypeScript, Vite and Tailwind, installable as an app (PWA). Passwordless login, cookie encrypted with AES-256-GCM, JWT and rate limiting. Docker containers on Azure Container Apps, with PostgreSQL."
+    }
+   },
+   "links": {
+    "app": "https://epilot-frontend.lemonriver-a9e05638.germanywestcentral.azurecontainerapps.io/aujourdhui",
+    "site": "https://pro1gramer-hic.github.io/epilot_demo/"
+   }
+  },
+  {
+   "id": "p-epytodo",
+   "slug": "epytodo",
+   "featured": false,
+   "title": {
+    "fr": "EPYTODO, API de gestion de tâches",
+    "en": "EPYTODO, task management API"
+   },
+   "desc": {
+    "fr": "Une API REST complète pour une todo list : créer un compte, se connecter et gérer ses tâches avec leur échéance et leur statut.",
+    "en": "A complete REST API for a to-do list: create an account, sign in and manage tasks with their due date and status."
+   },
+   "cat": "web",
+   "status": "termine",
+   "period": {
+    "fr": "Septembre 2026",
+    "en": "September 2026"
+   },
+   "start": "2026-09",
+   "updated": "2026-09-30",
+   "tech": [
+    "TypeScript",
+    "Node.js",
+    "Express",
+    "MySQL",
+    "JWT",
+    "bcrypt",
+    "HTML",
+    "CSS",
+    "JavaScript"
+   ],
+   "keys": [
+    "api",
+    "rest",
+    "todo",
+    "tâches",
+    "jwt",
+    "backend",
+    "epitech"
+   ],
+   "img": "images/epy3.jpg",
+   "gallery": [
+    {
+     "src": "images/epy1.jpg",
+     "caption": {
+      "fr": "Connexion",
+      "en": "Sign in"
+     }
+    },
+    {
+     "src": "images/epy2.jpg",
+     "caption": {
+      "fr": "Inscription",
+      "en": "Sign up"
+     }
+    },
+    {
+     "src": "images/epy3.jpg",
+     "caption": {
+      "fr": "Création et suivi des tâches après connexion",
+      "en": "Creating and tracking tasks after signing in"
+     }
+    }
+   ],
+   "sections": {
+    "contexte": {
+     "fr": "Projet Epitech du module G-WEB-200, réalisé en trois semaines par une équipe de trois. Le backend est écrit en TypeScript avec Node.js, Express et MySQL. Les mots de passe sont hachés avec bcrypt et les routes sont protégées par des tokens JWT.",
+     "en": "Epitech project for the G-WEB-200 module, built in three weeks by a team of three. The backend is written in TypeScript with Node.js, Express and MySQL. Passwords are hashed with bcrypt and routes are protected by JWT tokens."
+    },
+    "role": {
+     "fr": "J'ai conçu la base de données (tables, clé étrangère avec suppression en cascade) et l'architecture du serveur. J'ai codé l'inscription, la connexion et le middleware qui vérifie les tokens. J'ai ensuite assemblé le code des trois membres de l'équipe et réalisé le frontend en bonus.",
+     "en": "I designed the database (tables, foreign key with cascading delete) and the server architecture. I coded sign-up, login and the middleware that checks tokens. I then merged the work of all three team members and built the frontend as a bonus."
+    },
+    "resultats": {
+     "fr": "56 tests sur 56 validés par la moulinette Epitech, soit 100 %\nUn script de tests maison qui rejoue 77 scénarios du sujet\nUn frontend en HTML, CSS et JavaScript, sans framework, servi par le même serveur",
+     "en": "56 out of 56 tests passed on Epitech's automated grader (100%)\nA custom test script that replays 77 scenarios from the brief\nA frontend in plain HTML, CSS and JavaScript, no framework, served by the same server"
+    }
+   },
+   "links": {}
+  },
+  {
+   "id": "p-janus",
+   "slug": "janus",
+   "featured": false,
+   "title": {
+    "fr": "Janus",
+    "en": "Janus"
+   },
+   "desc": {
+    "fr": "Un mode pour IBM Bob 2.0 qui garde un dépôt fidèle à son code, avant et après chaque changement.",
+    "en": "An IBM Bob 2.0 mode that keeps a repository true to its code, before and after every change."
+   },
+   "cat": "ia",
+   "status": "exp",
+   "period": {
+    "fr": "Septembre 2026",
+    "en": "September 2026"
+   },
+   "start": "2026-09",
+   "updated": "2026-09-27",
+   "tech": [
+    "Python",
+    "IBM Bob",
+    "pytest"
+   ],
+   "keys": [
+    "ibm",
+    "bob",
+    "hackathon",
+    "agent",
+    "documentation",
+    "secrets",
+    "config"
+   ],
+   "img": "images/janus.jpg",
+   "gallery": [],
+   "sections": {
+    "contexte": {
+     "fr": "Créé en équipe pour le hackathon IBM Bob 2.0 de lablab.ai, du 25 au 27 septembre 2026. Le code change tous les jours, mais les fichiers autour ne suivent pas : un README qui décrit des commandes disparues, une variable d'environnement absente du serveur, un mot de passe collé dans le code, le même bug corrigé plusieurs fois.",
+     "en": "Built as a team for the lablab.ai IBM Bob 2.0 hackathon, September 25 to 27, 2026. Code changes every day, but the files around it don't keep up: a README describing commands that no longer exist, an environment variable missing on the server, a password pasted into the code, the same bug fixed over and over."
+    },
+    "fonction": {
+     "fr": "Trois commandes. janus plan repère tout ce que le changement va toucher et écrit un contrat de changement. janus check compare la config, la doc et les secrets au code, puis corrige les écarts avec trois sous-agents en parallèle. janus learn transforme chaque correction en règle pour Bob et en ligne du journal de décisions.",
+     "en": "Three commands. janus plan maps everything a change will touch and writes a change contract. janus check compares config, docs and secrets against the code, then fixes the drift with three parallel sub-agents. janus learn turns each fix into a rule for Bob and an entry in the decision log."
+    },
+    "decision": {
+     "fr": "Tout ce qui est mécanique tourne en Python simple : l'analyse du code, la lecture du README, la comparaison des configs, la recherche de secrets. Bob n'intervient que là où il faut du jugement, et il ne reçoit qu'un court résumé JSON, jamais tout le dépôt. Résultat : très peu de Bobcoins dépensés par correction.",
+     "en": "Everything mechanical runs in plain Python: parsing the code, reading the README, comparing configs, scanning for secrets. Bob only steps in where judgment is needed, and it only receives a short JSON summary, never the whole repository. The result: very few Bobcoins spent per fix."
+    },
+    "resultats": {
+     "fr": "Sur l'application d'exemple, les scanners relèvent 11 écarts : 3 de configuration, 2 secrets et 6 de documentation. L'analyse d'impact et le tri des erreurs de CI restaient en cours à la fin du hackathon.",
+     "en": "On the sample app, the scanners flag 11 issues: 3 configuration, 2 secrets and 6 documentation. Impact analysis and CI failure triage were still in progress at the end of the hackathon."
+    }
+   },
+   "links": {
+    "repo": "https://github.com/pro1gramer-hic/Janus-bob"
+   }
+  },
+  {
+   "id": "p-janus-agent",
+   "slug": "janus-agent",
+   "featured": false,
+   "title": {
+    "fr": "Janus Agent",
+    "en": "Janus Agent"
+   },
+   "desc": {
+    "fr": "La suite de Janus : un agent IA autonome qui fonctionne avec n'importe quel modèle de langage.",
+    "en": "The follow-up to Janus: a standalone AI agent that works with any language model."
+   },
+   "cat": "ia",
+   "status": "cours",
+   "period": {
+    "fr": "Depuis octobre 2026",
+    "en": "Since October 2026"
+   },
+   "start": "2026-10",
+   "updated": "2026-10-15",
+   "tech": [
+    "Python",
+    "Modèles de langage"
+   ],
+   "keys": [
+    "agent",
+    "llm",
+    "janus",
+    "documentation",
+    "secrets"
+   ],
+   "img": "",
+   "gallery": [],
+   "sections": {
+    "contexte": {
+     "fr": "Janus dépendait d'IBM Bob. Janus Agent reprend ses scanners pour en faire un agent indépendant du modèle.",
+     "en": "Janus depended on IBM Bob. Janus Agent reuses its scanners to build an agent that works with any model."
+    },
+    "fonction": {
+     "fr": "Des scanners Python gratuits repèrent les écarts de configuration, de documentation et de secrets. Des sous-agents en parallèle les corrigent, puis les scanners et les tests vérifient le résultat.",
+     "en": "Free Python scanners detect configuration, documentation and secret drift. Parallel sub-agents fix it, then the scanners and tests verify the result."
+    },
+    "resultats": {
+     "fr": "Le plan est validé, l'implémentation est en cours.",
+     "en": "The plan is approved and implementation is under way."
+    }
+   },
+   "links": {
+    "repo": "https://github.com/pro1gramer-hic/janus-agent"
+   }
+  },
+  {
+   "id": "p-ilot",
+   "slug": "ilot",
+   "featured": false,
+   "title": {
+    "fr": "îlot",
+    "en": "îlot"
+   },
+   "desc": {
+    "fr": "Une petite île posée en haut de l'écran Windows pour suivre ses agents IA, répondre à leurs demandes, lire ses messages et piloter sa musique.",
+    "en": "A small island at the top of the Windows screen to follow your AI agents, answer their requests, read your messages and control your music."
+   },
+   "cat": "prog",
+   "status": "cours",
+   "period": {
+    "fr": "2026",
+    "en": "2026"
+   },
+   "start": "2026-10",
+   "updated": "2026-10-15",
+   "tech": [
+    "Rust",
+    "Tauri",
+    "Svelte",
+    "TypeScript"
+   ],
+   "keys": [
+    "windows",
+    "desktop",
+    "agents",
+    "claude code",
+    "mascotte",
+    "mochi"
+   ],
+   "img": "images/ilot.jpg",
+   "gallery": [],
+   "sections": {
+    "fonction": {
+     "fr": "Un point par agent IA (Claude Code, Gemini CLI, Codex, Copilot CLI, OpenCode…) avec ce que chacun modifie et une session en direct. Les demandes de permission arrivent avec la commande exacte et son niveau de risque, puis Autoriser ou Refuser. L'île affiche aussi les messages WhatsApp et Discord, pilote Spotify ou YouTube, et propose un chat avec Claude, Gemini, OpenAI ou un modèle local. Mochi, la mascotte, respire, suit des yeux et danse avec la musique.",
+     "en": "One dot per AI agent (Claude Code, Gemini CLI, Codex, Copilot CLI, OpenCode…) showing what each one changes, plus a live session view. Permission requests come with the exact command and its risk level, then Allow or Deny. The island also shows WhatsApp and Discord messages, controls Spotify or YouTube, and offers a chat with Claude, Gemini, OpenAI or a local model. Mochi, the mascot, breathes, follows you with its eyes and dances to the music."
+    },
+    "decision": {
+     "fr": "îlot ne répond jamais à la place de l'utilisateur : sans réponse, l'agent repose sa question dans son terminal.",
+     "en": "îlot never answers on the user's behalf: with no reply, the agent asks again in its terminal."
+    },
+    "confidentialite": {
+     "fr": "Aucune télémétrie, aucun compte, aucun serveur. Les agents parlent à îlot par un canal local réservé au compte Windows, sans port réseau ouvert. Les clés API sont rangées dans le Gestionnaire d'identification Windows, et le contenu des messages n'est jamais écrit sur le disque.",
+     "en": "No telemetry, no account, no server. Agents talk to îlot through a local channel restricted to the Windows user account, with no open network port. API keys are stored in Windows Credential Manager, and message content is never written to disk."
+    }
+   },
+   "links": {
+    "repo": "https://github.com/pro1gramer-hic/ilot"
+   }
+  },
+  {
+   "id": "p-quiz",
+   "slug": "l-epreuve-quiz-basketball",
+   "featured": false,
+   "title": {
+    "fr": "L'Épreuve, quiz de basketball",
+    "en": "L'Épreuve, a basketball quiz"
+   },
+   "desc": {
+    "fr": "Vingt questions de basketball tirées au hasard dans une banque de plus de cent.",
+    "en": "Twenty basketball questions drawn at random from a bank of more than a hundred."
+   },
+   "cat": "web",
+   "status": "termine",
+   "period": {
+    "fr": "Décembre 2025 – septembre 2026",
+    "en": "December 2025 – September 2026"
+   },
+   "start": "2025-12",
+   "updated": "2026-09-15",
+   "tech": [
+    "HTML",
+    "CSS",
+    "JavaScript"
+   ],
+   "keys": [
+    "quiz",
+    "basket",
+    "jeu",
+    "javascript"
+   ],
+   "img": "images/quiz.jpg",
+   "gallery": [],
+   "sections": {
+    "fonction": {
+     "fr": "Règles, histoire, légendes, records et basket africain. Une seule bonne réponse par question et pas de retour en arrière : chaque partie est différente.",
+     "en": "Rules, history, legends, records and African basketball. One right answer per question and no going back: every game is different."
+    }
+   },
+   "links": {
+    "demo": "https://pro1gramer-hic.github.io/Motivation-/",
+    "repo": "https://github.com/pro1gramer-hic/Motivation-"
+   }
+  },
+  {
+   "id": "p-eira",
+   "slug": "royaume-d-eira",
+   "featured": false,
+   "title": {
+    "fr": "Royaume d'Eira",
+    "en": "Kingdom of Eira"
+   },
+   "desc": {
+    "fr": "Une chasse au trésor par QR codes : chaque parchemin scanné débloque l'étape suivante.",
+    "en": "A QR code treasure hunt: each scanned scroll unlocks the next step."
+   },
+   "cat": "web",
+   "status": "termine",
+   "period": {
+    "fr": "Juin 2026",
+    "en": "June 2026"
+   },
+   "start": "2026-06",
+   "updated": "2026-06-09",
+   "tech": [
+    "HTML",
+    "CSS",
+    "JavaScript"
+   ],
+   "keys": [
+    "qr code",
+    "jeu",
+    "chasse au trésor",
+    "caméra"
+   ],
+   "img": "images/eira.jpg",
+   "gallery": [],
+   "sections": {
+    "contexte": {
+     "fr": "Créée comme cadeau personnalisé.",
+     "en": "Made as a personal gift."
+    },
+    "fonction": {
+     "fr": "Le scan se fait dans le navigateur, avec la caméra du téléphone et la bibliothèque jsQR. Musique d'ambiance, énigme finale à déverrouiller et album photo au bout du chemin.",
+     "en": "Scanning happens in the browser, with the phone camera and the jsQR library. Background music, a final riddle to unlock and a photo album at the end of the trail."
+    }
+   },
+   "links": {
+    "demo": "https://pro1gramer-hic.github.io/eira/",
+    "repo": "https://github.com/pro1gramer-hic/eira"
+   }
+  }
+ ],
+ "certs": [
+  {
+   "name": "Cybersecurity Fundamentals",
+   "issuer": "IBM SkillsBuild",
+   "via": {
+    "fr": "Badge Credly",
+    "en": "Credly badge"
+   },
+   "kind": {
+    "fr": "Badge obtenu",
+    "en": "Badge earned"
+   },
+   "status": "ok",
+   "date": {
+    "fr": "22 septembre 2026",
+    "en": "September 22, 2026"
+   },
+   "skills": {
+    "fr": "Menaces et types d'attaques, ingénierie sociale, cryptographie, stratégies de prévention, de détection et de réponse.",
+    "en": "Threats and attack types, social engineering, cryptography, prevention, detection and response strategies."
+   },
+   "url": "https://www.credly.com/badges/a8646108-5189-40dd-8ec7-d445bced52df",
+   "id": ""
+  },
+  {
+   "name": "IBM Bob 2.0 hackathon",
+   "issuer": "lablab.ai",
+   "via": {
+    "fr": "",
+    "en": ""
+   },
+   "kind": {
+    "fr": "Certificat de participation",
+    "en": "Certificate of participation"
+   },
+   "status": "part",
+   "date": {
+    "fr": "28 septembre 2026",
+    "en": "September 28, 2026"
+   },
+   "skills": {
+    "fr": "Hackathon du 25 au 27 septembre 2026 : solution complète soumise, basée sur IBM.",
+    "en": "Hackathon held September 25 to 27, 2026: complete solution submitted, built on IBM."
+   },
+   "url": "https://lablab.ai/u/@pro1gramerhic908/ai-hackathons/ibm-bob-2-hackathon/certificate",
+   "id": "CMULAQMWK01GHS601SMGOXI1U"
+  }
+ ],
+ "cv": {
+  "fr": {
+   "pdf": "cv/Avoce_Franck_Ash_Paolo_fr.pdf",
+   "img": "cv/apercu_fr.jpg"
+  },
+  "en": {
+   "pdf": "cv/Avoce_Franck_Ash_Paolo_en.pdf",
+   "img": "cv/apercu_en.jpg"
+  }
+ }
+}

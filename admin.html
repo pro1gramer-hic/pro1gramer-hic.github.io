@@ -1,0 +1,637 @@
+<!doctype html>
+<html lang="fr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="robots" content="noindex, nofollow">
+<title>Administration · Portfolio Franck Avoce</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@500&display=swap" rel="stylesheet">
+<style>
+:root{
+  color-scheme:dark;
+  --bg:#272B35; --bg-deep:#1F232C; --surface:#2E333F; --surface-2:#363C4A;
+  --line:rgba(243,240,234,.10); --line-strong:rgba(243,240,234,.20);
+  --text:#F3F0EA; --muted:#AEB2BD; --faint:#868B97;
+  --accent:#A78BFA; --accent-soft:rgba(167,139,250,.16); --accent-glow:rgba(167,139,250,.35); --on-accent:#1E2029;
+  --ok:#6FD3A0; --warn:#F2C26B; --danger:#F48A8A; --info:#7CC4F5;
+  --font:"Inter", system-ui, -apple-system, "Segoe UI", sans-serif; --mono:"JetBrains Mono", ui-monospace, Consolas, monospace;
+  --s1:.25rem; --s2:.5rem; --s3:.75rem; --s4:1rem; --s5:1.5rem; --s6:2rem; --s7:3rem;
+  --c:8px; --ease:cubic-bezier(.2,.7,.2,1);
+  box-sizing:border-box;
+}
+*,*::before,*::after{ box-sizing:border-box; }
+html,body{ margin:0; }
+body{ background:var(--bg); color:var(--text); font:15px/1.6 var(--font); min-height:100vh; padding-bottom:env(safe-area-inset-bottom,0px); }
+:focus-visible{ outline:2px solid var(--accent); outline-offset:2px; }
+.sr-only{ position:absolute!important; width:1px; height:1px; overflow:hidden; clip:rect(0 0 0 0); white-space:nowrap; }
+.cut{ clip-path:polygon(var(--c) 0, 100% 0, 100% calc(100% - var(--c)), calc(100% - var(--c)) 100%, 0 100%, 0 var(--c)); }
+h1,h2,h3{ line-height:1.2; margin:0; }
+h1{ font-size:1.5rem; } h2{ font-size:1.25rem; } h3{ font-size:1rem; }
+p{ margin:0; }
+a{ color:var(--accent); }
+.muted{ color:var(--muted); } .faint{ color:var(--faint); font-size:.85rem; }
+
+/* boutons */
+.btn{ display:inline-flex; align-items:center; justify-content:center; gap:.45rem; min-height:44px; padding:0 1.1rem; border:0; font:600 .92rem var(--font); cursor:pointer; color:var(--text); background:var(--surface-2); box-shadow:inset 0 -2px 0 var(--line-strong); text-decoration:none; transition:background-color .15s, box-shadow .15s, transform .1s; clip-path:polygon(var(--c) 0, 100% 0, 100% calc(100% - var(--c)), calc(100% - var(--c)) 100%, 0 100%, 0 var(--c)); }
+.btn:hover{ background:var(--accent-soft); box-shadow:inset 0 -2px 0 var(--accent); }
+.btn:active{ transform:translateY(1px); }
+.btn:focus-visible{ outline:2px solid var(--text); outline-offset:-5px; }
+.btn-primary{ background:var(--accent); color:var(--on-accent); box-shadow:none; }
+.btn-primary:hover{ background:#B9A3FB; box-shadow:none; }
+.btn-danger{ color:var(--danger); }
+.btn-danger:hover{ background:rgba(244,138,138,.12); box-shadow:inset 0 -2px 0 var(--danger); }
+.btn-sm{ min-height:36px; padding:0 .8rem; font-size:.84rem; --c:6px; }
+.btn[disabled]{ opacity:.5; cursor:not-allowed; }
+.btn svg{ width:16px; height:16px; }
+
+/* champs */
+.field{ display:grid; gap:.3rem; min-width:0; }
+.field > label, .field > .lbl{ font-size:.84rem; color:var(--muted); font-weight:500; }
+.field .lang{ font-family:var(--mono); font-size:.7rem; color:var(--faint); margin-left:.3rem; }
+input[type=text], input[type=url], input[type=email], input[type=tel], input[type=password], input[type=month], select, textarea{
+  width:100%; min-height:42px; padding:.55rem .8rem; background:var(--bg-deep); color:var(--text); border:1px solid var(--line-strong); font:inherit; font-size:.92rem;
+  clip-path:polygon(6px 0, 100% 0, 100% calc(100% - 6px), calc(100% - 6px) 100%, 0 100%, 0 6px); transition:border-color .15s;
+}
+textarea{ min-height:84px; resize:vertical; line-height:1.5; }
+input:focus, select:focus, textarea:focus{ outline:none; border-color:var(--accent); }
+.check{ display:inline-flex; align-items:center; gap:.5rem; min-height:40px; cursor:pointer; font-size:.92rem; }
+.check input{ width:18px; height:18px; accent-color:var(--accent); }
+.pair{ display:grid; gap:var(--s3); grid-template-columns:1fr; }
+@media (min-width:860px){ .pair{ grid-template-columns:1fr 1fr; } }
+.grid2{ display:grid; gap:var(--s4); grid-template-columns:1fr; }
+@media (min-width:700px){ .grid2{ grid-template-columns:1fr 1fr; } }
+.grid3{ display:grid; gap:var(--s4); grid-template-columns:1fr; }
+@media (min-width:900px){ .grid3{ grid-template-columns:repeat(3, 1fr); } }
+.hint{ font-size:.8rem; color:var(--faint); }
+.box > *, .item-body > *, .sec-body > *, .pair > *, .grid2 > *, .grid3 > *, .gal-item > *, .panel > *{ min-width:0; }
+.pair{ min-width:0; }
+.err{ color:var(--danger); font-size:.85rem; }
+
+/* connexion */
+.login{ min-height:100vh; display:grid; place-items:center; padding:var(--s5); }
+.login-card{ width:min(100%, 520px); background:var(--surface); border:1px solid var(--line); padding:var(--s6); display:grid; gap:var(--s4); }
+.login-card details{ background:var(--bg-deep); padding:var(--s3) var(--s4); font-size:.88rem; }
+.login-card summary{ cursor:pointer; font-weight:600; min-height:32px; display:flex; align-items:center; }
+.login-card ol{ margin:.5rem 0 0; padding-left:1.2rem; display:grid; gap:.35rem; color:var(--muted); }
+
+/* application */
+.top{ position:sticky; top:0; z-index:20; display:flex; align-items:center; gap:var(--s3); flex-wrap:wrap; padding:var(--s3) var(--s5); padding-top:calc(var(--s3) + env(safe-area-inset-top,0px)); background:color-mix(in srgb, var(--bg) 90%, transparent); backdrop-filter:blur(12px); border-bottom:1px solid var(--line); }
+.top .brand{ font-weight:700; margin-right:auto; display:flex; align-items:center; gap:.6rem; }
+.top .brand i{ width:10px; height:10px; background:var(--accent); transform:rotate(45deg); }
+.state{ font-family:var(--mono); font-size:.75rem; padding:.3rem .7rem; background:var(--surface-2); }
+.state.dirty{ color:var(--warn); } .state.clean{ color:var(--ok); }
+.layout{ display:grid; grid-template-columns:1fr; gap:var(--s5); padding:var(--s5); max-width:1240px; margin:0 auto; }
+@media (min-width:980px){ .layout{ grid-template-columns:220px 1fr; align-items:start; } .side{ position:sticky; top:84px; } }
+.side{ display:flex; gap:4px; overflow-x:auto; scrollbar-width:none; }
+@media (min-width:980px){ .side{ flex-direction:column; } }
+.tab{ text-align:left; min-height:44px; padding:0 1rem; border:0; background:transparent; color:var(--muted); font:500 .92rem var(--font); cursor:pointer; white-space:nowrap; display:flex; align-items:center; gap:.5rem; justify-content:space-between; }
+.tab:hover{ color:var(--text); background:var(--surface); }
+.tab[aria-selected="true"]{ color:var(--text); background:var(--accent-soft); box-shadow:inset 3px 0 0 var(--accent); }
+.tab .n{ font-family:var(--mono); font-size:.72rem; color:var(--faint); }
+.panel{ display:grid; gap:var(--s5); min-width:0; }
+.panel-head{ display:flex; justify-content:space-between; align-items:end; gap:var(--s3); flex-wrap:wrap; }
+.panel-head p{ margin-top:.3rem; }
+.box{ background:var(--surface); border:1px solid var(--line); padding:var(--s5); display:grid; gap:var(--s4); position:relative; }
+.box > h3{ font-size:1rem; }
+
+/* listes d'éléments */
+.items{ display:grid; gap:var(--s3); }
+.item{ background:var(--surface); border:1px solid var(--line); }
+.item.open{ border-color:var(--accent-glow); }
+.item-row{ display:flex; align-items:center; gap:var(--s3); padding:var(--s3) var(--s4); flex-wrap:wrap; }
+.item-row .ttl{ flex:1; min-width:180px; font-weight:600; }
+.item-row .ttl small{ display:block; font-weight:400; color:var(--faint); font-size:.8rem; }
+.item-row .acts{ display:flex; gap:6px; flex-wrap:wrap; }
+.item-body{ border-top:1px solid var(--line); padding:var(--s5) var(--s4); display:grid; gap:var(--s4); }
+.thumb{ width:64px; height:40px; object-fit:cover; background:var(--bg-deep); flex-shrink:0; }
+.badge{ font-family:var(--mono); font-size:.68rem; padding:.12rem .45rem; background:var(--surface-2); color:var(--muted); }
+.badge.ok{ color:var(--ok); } .badge.warn{ color:var(--warn); } .badge.info{ color:var(--info); } .badge.new{ color:var(--accent); }
+.media{ display:flex; gap:var(--s4); align-items:center; flex-wrap:wrap; }
+.media img{ width:200px; aspect-ratio:16/10; object-fit:cover; background:var(--bg-deep); border:1px solid var(--line); }
+.media .empty-img{ width:200px; aspect-ratio:16/10; display:grid; place-items:center; background:var(--bg-deep); border:1px dashed var(--line-strong); color:var(--faint); font-size:.8rem; }
+.gal{ display:grid; gap:var(--s3); }
+.gal-item{ display:grid; gap:var(--s3); grid-template-columns:1fr; background:var(--bg-deep); padding:var(--s3); }
+@media (min-width:860px){ .gal-item{ grid-template-columns:160px 1fr auto; align-items:start; } }
+.gal-item img{ width:160px; aspect-ratio:16/10; object-fit:cover; }
+details.sec{ background:var(--bg-deep); }
+details.sec > summary{ cursor:pointer; padding:var(--s3) var(--s4); font-weight:600; font-size:.9rem; display:flex; justify-content:space-between; gap:var(--s3); }
+details.sec > summary .badge{ font-weight:400; }
+details.sec > .sec-body{ padding:0 var(--s4) var(--s4); display:grid; gap:var(--s3); }
+.empty{ text-align:center; padding:var(--s6); border:1px dashed var(--line-strong); color:var(--muted); display:grid; gap:var(--s3); justify-items:center; }
+
+/* bandeaux, notifications, publication */
+.banner{ display:flex; gap:var(--s3); align-items:center; flex-wrap:wrap; padding:var(--s3) var(--s4); background:rgba(242,194,107,.1); border:1px solid rgba(242,194,107,.35); color:var(--text); }
+.banner p{ flex:1; min-width:220px; }
+.toasts{ position:fixed; z-index:50; right:var(--s4); bottom:calc(var(--s4) + env(safe-area-inset-bottom,0px)); display:grid; gap:var(--s2); max-width:min(92vw, 420px); }
+.toast{ padding:var(--s3) var(--s4); background:var(--surface-2); border-left:3px solid var(--accent); box-shadow:0 20px 40px -20px rgba(0,0,0,.6); animation:in .3s var(--ease); font-size:.9rem; }
+.toast.ok{ border-color:var(--ok); } .toast.bad{ border-color:var(--danger); }
+@keyframes in{ from{ opacity:0; transform:translateY(8px); } }
+dialog{ border:1px solid var(--line-strong); background:var(--surface); color:var(--text); padding:var(--s6); width:min(92vw, 520px); }
+dialog::backdrop{ background:rgba(10,12,16,.65); }
+.steps{ list-style:none; margin:var(--s4) 0; padding:0; display:grid; gap:.4rem; font-size:.9rem; }
+.steps li{ display:flex; gap:.6rem; align-items:center; }
+.steps li::before{ content:""; width:9px; height:9px; background:var(--faint); transform:rotate(45deg); flex-shrink:0; }
+.steps li.run::before{ background:var(--warn); animation:pulse 1s infinite; } .steps li.done::before{ background:var(--ok); } .steps li.fail::before{ background:var(--danger); }
+@keyframes pulse{ 50%{ opacity:.3; } }
+.row-actions{ display:flex; gap:var(--s3); flex-wrap:wrap; justify-content:flex-end; }
+@media (prefers-reduced-motion: reduce){ *{ animation:none!important; transition:none!important; } }
+</style>
+</head>
+<body>
+
+<!-- ============ CONNEXION ============ -->
+<main id="login" class="login">
+  <form class="login-card cut" id="loginForm" novalidate>
+    <div>
+      <h1>Administration du portfolio</h1>
+      <p class="muted" style="margin-top:.4rem">Ajoute ou modifie tes projets, compétences, certifications et textes. Chaque publication met à jour le site en une à deux minutes.</p>
+    </div>
+    <div class="grid3">
+      <div class="field"><label for="lgOwner">Compte GitHub</label><input type="text" id="lgOwner" autocomplete="username" required></div>
+      <div class="field"><label for="lgRepo">Dépôt</label><input type="text" id="lgRepo" required></div>
+      <div class="field"><label for="lgBranch">Branche</label><input type="text" id="lgBranch" required></div>
+    </div>
+    <div class="field">
+      <label for="lgToken">Jeton GitHub</label>
+      <input type="password" id="lgToken" autocomplete="current-password" required aria-describedby="lgErr">
+    </div>
+    <label class="check"><input type="checkbox" id="lgRemember"> Rester connecté sur cet appareil</label>
+    <p class="err" id="lgErr" role="alert"></p>
+    <button class="btn btn-primary" type="submit" id="lgBtn">Se connecter</button>
+    <details>
+      <summary>Comment créer le jeton (une seule fois)</summary>
+      <ol>
+        <li>Sur GitHub, ouvre ta photo de profil en haut à droite, puis <strong>Settings</strong>.</li>
+        <li>Tout en bas du menu de gauche : <strong>Developer settings</strong>, puis <strong>Personal access tokens</strong>, puis <strong>Fine-grained tokens</strong>.</li>
+        <li>Clique sur <strong>Generate new token</strong>. Donne-lui un nom (« Admin portfolio ») et une date d'expiration.</li>
+        <li>Dans <strong>Repository access</strong>, choisis <strong>Only select repositories</strong> et sélectionne le dépôt de ton site.</li>
+        <li>Dans <strong>Permissions</strong>, ligne <strong>Contents</strong>, choisis <strong>Read and write</strong>.</li>
+        <li>Clique sur <strong>Generate token</strong>, copie le jeton (il commence par github_pat_) et colle-le ici.</li>
+      </ol>
+      <p class="faint" style="margin-top:.6rem">Le jeton reste dans ce navigateur. Ne le partage avec personne : il permet de modifier ton site.</p>
+    </details>
+  </form>
+</main>
+
+<!-- ============ APPLICATION ============ -->
+<div id="app" hidden>
+  <header class="top">
+    <div class="brand"><i aria-hidden="true"></i>Admin du portfolio</div>
+    <span class="state clean" id="state" role="status">Tout est publié</span>
+    <a class="btn btn-sm" id="siteLink" target="_blank" rel="noopener noreferrer">Voir le site</a>
+    <button class="btn btn-primary btn-sm" id="publishBtn">Publier</button>
+    <button class="btn btn-sm" id="logoutBtn">Se déconnecter</button>
+  </header>
+  <div class="layout">
+    <nav class="side" role="tablist" aria-label="Rubriques" id="tabs"></nav>
+    <section class="panel" id="panel" role="tabpanel" tabindex="-1"></section>
+  </div>
+</div>
+
+<dialog id="pubDialog" aria-labelledby="pubTitle">
+  <h2 id="pubTitle">Publication en cours</h2>
+  <ul class="steps" id="pubSteps"></ul>
+  <p id="pubMsg" class="muted"></p>
+  <div class="row-actions"><button class="btn btn-sm" id="pubClose" disabled>Fermer</button></div>
+</dialog>
+
+<div class="toasts" id="toasts" aria-live="polite"></div>
+
+<script>
+(() => {
+"use strict";
+const $ = (s, r = document) => r.querySelector(s);
+const $$ = (s, r = document) => [...r.querySelectorAll(s)];
+const esc = (t) => String(t ?? "").replace(/[&<>"']/g, c => ({ "&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;","'":"&#39;" }[c]));
+const store = { get(k, d){ try{ const v = localStorage.getItem(k) ?? sessionStorage.getItem(k); return v == null ? d : JSON.parse(v); }catch(e){ return d; } },
+  set(k, v, persist = true){ try{ (persist ? localStorage : sessionStorage).setItem(k, JSON.stringify(v)); }catch(e){} },
+  del(k){ try{ localStorage.removeItem(k); sessionStorage.removeItem(k); }catch(e){} } };
+const today = () => new Date().toISOString().slice(0, 10);
+const slugify = (s) => String(s || "").normalize("NFD").replace(/[\u0300-\u036f]/g, "").toLowerCase().replace(/[^a-z0-9]+/g, "-").replace(/^-|-$/g, "").slice(0, 60);
+
+/* ================= Référentiels du site ================= */
+const CATS = [["web","Développement web"],["cyber","Cybersécurité"],["reseau","Réseaux et systèmes"],["prog","Programmation"],["ia","Intelligence artificielle et données"],["labo","Laboratoire et expérimentations"],["autre","Autres projets"]];
+const STATUSES = [["cours","En cours"],["termine","Terminé"],["exp","Expérimental"]];
+const SECTIONS = [["contexte","Contexte"],["role","Mon rôle"],["fonction","Ce que fait l'outil"],["modele","Le modèle"],["decision","La décision technique"],["dashboard","Le tableau de bord"],["technique","Architecture"],["confidentialite","Confidentialité"],["qualite","Qualité du code"],["objectifs","Objectifs"],["demarche","Démarche"],["difficultes","Difficultés"],["resultats","Résultats et limites"],["apprentissages","Apprentissages"]];
+const LINKS = [["app","Application en ligne"],["demo","Démonstration en ligne"],["site","Site de présentation"],["repo","Dépôt source"],["docs","Documentation"]];
+const TABS = [["textes","Textes"],["projets","Projets"],["competences","Compétences"],["parcours","Parcours"],["certifs","Certifications"],["contact","Contact"],["cv","CV"]];
+
+/* ================= État ================= */
+const S = { cfg:null, C:null, sha:null, pending:new Map(), dirty:false, tab:"projets", open:{}, raw:"" };
+const T = (x) => (x && typeof x === "object") ? x : { fr:x || "", en:"" };
+
+/* ================= GitHub ================= */
+const b64enc = (str) => { const bytes = new TextEncoder().encode(str); let bin = ""; for (let i = 0; i < bytes.length; i += 0x8000) bin += String.fromCharCode.apply(null, bytes.subarray(i, i + 0x8000)); return btoa(bin); };
+const b64dec = (b64) => new TextDecoder().decode(Uint8Array.from(atob(b64.replace(/\s/g, "")), c => c.charCodeAt(0)));
+async function gh(path, opt = {}){
+  const { owner, repo, token } = S.cfg;
+  const r = await fetch(`https://api.github.com/repos/${encodeURIComponent(owner)}/${encodeURIComponent(repo)}${path}`, {
+    ...opt, headers:{ Authorization:`Bearer ${token}`, Accept:"application/vnd.github+json", "X-GitHub-Api-Version":"2022-11-28", ...(opt.body ? { "Content-Type":"application/json" } : {}) }
+  });
+  let data = null; try{ data = await r.json(); }catch(e){}
+  if (!r.ok){ const err = new Error((data && data.message) || ("Erreur " + r.status)); err.status = r.status; throw err; }
+  return data;
+}
+const contentPath = (p) => `/contents/${p.split("/").map(encodeURIComponent).join("/")}`;
+async function getSha(path){ try{ const d = await gh(`${contentPath(path)}?ref=${encodeURIComponent(S.cfg.branch)}`); return d.sha; }catch(e){ if (e.status === 404) return null; throw e; } }
+async function putFile(path, b64, message, sha){
+  const body = { message, content:b64, branch:S.cfg.branch }; if (sha) body.sha = sha;
+  try{ return await gh(contentPath(path), { method:"PUT", body:JSON.stringify(body) }); }
+  catch(e){
+    if (e.status === 409 || e.status === 422){ const s = await getSha(path); body.sha = s || undefined; return gh(contentPath(path), { method:"PUT", body:JSON.stringify(body) }); }
+    throw e;
+  }
+}
+const rawUrl = (p) => /^(data:|https?:)/.test(p) ? p : `https://raw.githubusercontent.com/${S.cfg.owner}/${S.cfg.repo}/${S.cfg.branch}/${p}`;
+const imgSrc = (p) => !p ? "" : (S.pending.get(p)?.preview || rawUrl(p));
+const siteUrl = () => S.cfg.repo.toLowerCase() === `${S.cfg.owner.toLowerCase()}.github.io` ? `https://${S.cfg.repo}/` : `https://${S.cfg.owner}.github.io/${S.cfg.repo}/`;
+
+/* ================= Connexion ================= */
+const saved = store.get("adm-cfg", null);
+$("#lgOwner").value = saved?.owner || "pro1gramer-hic";
+$("#lgRepo").value = saved?.repo || "pro1gramer-hic.github.io";
+$("#lgBranch").value = saved?.branch || "main";
+if (saved?.token){ $("#lgToken").value = saved.token; $("#lgRemember").checked = !!saved.remember; }
+$("#loginForm").addEventListener("submit", async (e) => {
+  e.preventDefault();
+  const cfg = { owner:$("#lgOwner").value.trim(), repo:$("#lgRepo").value.trim(), branch:$("#lgBranch").value.trim() || "main", token:$("#lgToken").value.trim(), remember:$("#lgRemember").checked };
+  const errEl = $("#lgErr"); errEl.textContent = "";
+  if (!cfg.owner || !cfg.repo || !cfg.token){ errEl.textContent = "Remplis le compte, le dépôt et le jeton."; return; }
+  const btn = $("#lgBtn"); btn.disabled = true; btn.textContent = "Connexion…";
+  S.cfg = cfg;
+  try{
+    const repo = await gh("");
+    if (repo.permissions && !repo.permissions.push) throw Object.assign(new Error("Ce jeton peut lire le dépôt mais pas le modifier. Donne-lui la permission Contents : Read and write."), { status:403 });
+    let file;
+    try{ file = await gh(`${contentPath("data/content.json")}?ref=${encodeURIComponent(cfg.branch)}`); }
+    catch(e2){ if (e2.status === 404) throw Object.assign(new Error("Le fichier data/content.json est introuvable dans ce dépôt. Envoie d'abord les fichiers du site, puis reconnecte-toi."), { status:404 }); throw e2; }
+    S.raw = b64dec(file.content); S.C = JSON.parse(S.raw); S.sha = file.sha;
+    store.del("adm-cfg"); store.set("adm-cfg", cfg.remember ? cfg : { owner:cfg.owner, repo:cfg.repo, branch:cfg.branch }, true);
+    if (!cfg.remember) store.set("adm-cfg-session", cfg, false);
+    start();
+  }catch(e3){
+    errEl.textContent = e3.status === 401 ? "Jeton refusé. Vérifie qu'il est complet et qu'il n'a pas expiré."
+      : e3.status === 404 && !/content\.json/.test(e3.message) ? "Dépôt introuvable, ou le jeton n'y a pas accès. Vérifie le nom du compte, du dépôt et l'accès du jeton."
+      : e3.message || "Connexion impossible. Vérifie ta connexion Internet.";
+    S.cfg = null;
+  }finally{ btn.disabled = false; btn.textContent = "Se connecter"; }
+});
+$("#logoutBtn").addEventListener("click", () => {
+  if (S.dirty && !confirm("Des modifications ne sont pas publiées. Se déconnecter quand même ? Elles restent enregistrées en brouillon sur cet appareil.")) return;
+  const c = store.get("adm-cfg", {}); store.set("adm-cfg", { owner:c.owner, repo:c.repo, branch:c.branch }); store.del("adm-cfg-session");
+  location.reload();
+});
+
+/* ================= Brouillon ================= */
+function markDirty(){
+  S.dirty = true; updateState();
+  clearTimeout(markDirty.t);
+  markDirty.t = setTimeout(() => store.set("adm-draft", { C:S.C, base:S.sha, pending:[...S.pending.keys()], at:Date.now() }), 400);
+}
+function updateState(){
+  const n = S.pending.size, el = $("#state");
+  el.className = "state " + (S.dirty ? "dirty" : "clean");
+  el.textContent = S.dirty ? `Modifications non publiées${n ? ` · ${n} fichier${n > 1 ? "s" : ""} à envoyer` : ""}` : "Tout est publié";
+}
+addEventListener("beforeunload", (e) => { if (S.dirty){ e.preventDefault(); e.returnValue = ""; } });
+
+function start(){
+  $("#login").hidden = true; $("#app").hidden = false;
+  $("#siteLink").href = siteUrl();
+  const d = store.get("adm-draft", null);
+  if (d && d.base === S.sha && JSON.stringify(d.C) !== S.raw) S.draft = d;
+  renderTabs(); render(); updateState();
+}
+
+/* ================= Accès aux données ================= */
+const get = (path) => path.split(".").reduce((o, k) => o == null ? o : o[k], S.C);
+function set(path, value){
+  const ks = path.split("."), last = ks.pop();
+  const obj = ks.reduce((o, k, i) => { if (o[k] == null) o[k] = /^\d+$/.test(ks[i + 1] || last) ? [] : {}; return o[k]; }, S.C);
+  obj[last] = value;
+  const m = path.match(/^projects\.(\d+)\./); if (m && S.C.projects[m[1]]) S.C.projects[m[1]].updated = today();
+  markDirty();
+}
+
+/* ================= Petits composants ================= */
+let uid = 0; const nid = () => "f" + (++uid);
+const input = (label, path, type = "text", ph = "") => { const id = nid(); return `<div class="field"><label for="${id}">${label}</label><input type="${type}" id="${id}" data-bind="${path}" value="${esc(get(path))}" placeholder="${esc(ph)}"></div>`; };
+const area = (label, path, rows = 3, hint = "") => { const id = nid(); return `<div class="field"><label for="${id}">${label}</label><textarea id="${id}" rows="${rows}" data-bind="${path}">${esc(get(path))}</textarea>${hint ? `<p class="hint">${hint}</p>` : ""}</div>`; };
+function bi(label, path, opt = {}){
+  const v = T(get(path)); if (typeof get(path) !== "object" || get(path) === null) set_silent(path, v);
+  const a = nid(), b = nid(), tag = (id, l) => opt.area
+    ? `<textarea id="${id}" rows="${opt.rows || 3}" data-bind="${path}.${l}">${esc(v[l])}</textarea>`
+    : `<input type="text" id="${id}" data-bind="${path}.${l}" value="${esc(v[l])}">`;
+  return `<div class="pair">
+    <div class="field"><label for="${a}">${label}<span class="lang">FR</span></label>${tag(a, "fr")}</div>
+    <div class="field"><label for="${b}">${label}<span class="lang">EN</span></label>${tag(b, "en")}${opt.hint ? `<p class="hint">${opt.hint}</p>` : ""}</div>
+  </div>`;
+}
+function set_silent(path, value){ const ks = path.split("."), last = ks.pop(); const obj = ks.reduce((o, k) => (o[k] ??= {}), S.C); obj[last] = value; }
+const select = (label, path, options) => { const id = nid(), v = get(path); return `<div class="field"><label for="${id}">${label}</label><select id="${id}" data-bind="${path}">${options.map(([k, l]) => `<option value="${k}"${k === v ? " selected" : ""}>${esc(l)}</option>`).join("")}</select></div>`; };
+const checkbox = (label, path) => `<label class="check"><input type="checkbox" data-bind="${path}" data-type="bool"${get(path) ? " checked" : ""}> ${label}</label>`;
+const listInput = (label, path, hint) => { const id = nid(); return `<div class="field"><label for="${id}">${label}</label><input type="text" id="${id}" data-bind="${path}" data-type="list" value="${esc((get(path) || []).join(", "))}">${hint ? `<p class="hint">${hint}</p>` : ""}</div>`; };
+/* lignes « français | anglais » pour les listes bilingues */
+const linesOf = (arr) => (arr || []).map(x => { const t = T(x); return t.en && t.en !== t.fr ? `${t.fr} | ${t.en}` : t.fr; }).join("\n");
+const parseLines = (txt) => txt.split("\n").map(l => l.trim()).filter(Boolean).map(l => { const [fr, en] = l.split("|").map(s => (s || "").trim()); return { fr, en:en || fr }; });
+const biLines = (label, path, hint) => { const id = nid(); return `<div class="field"><label for="${id}">${label}</label><textarea id="${id}" rows="${Math.max(3, (get(path) || []).length + 1)}" data-bind="${path}" data-type="lines">${esc(linesOf(get(path)))}</textarea><p class="hint">${hint || "Une entrée par ligne. Pour l'anglais : « français | anglais ». Sans « | », le même texte sert aux deux langues."}</p></div>`; };
+const ICON = {
+  up:'<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M12 19V5M6 11l6-6 6 6"/></svg>',
+  down:'<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M12 5v14M6 13l6 6 6-6"/></svg>',
+  plus:'<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M12 5v14M5 12h14"/></svg>'
+};
+const moveBtns = (list, i, n) => `<button class="btn btn-sm" data-act="up" data-list="${list}" data-i="${i}" ${i === 0 ? "disabled" : ""} aria-label="Monter">${ICON.up}</button><button class="btn btn-sm" data-act="down" data-list="${list}" data-i="${i}" ${i === n - 1 ? "disabled" : ""} aria-label="Descendre">${ICON.down}</button>`;
+
+/* liaison des champs */
+document.addEventListener("input", (e) => {
+  const el = e.target.closest("[data-bind]"); if (!el || !S.C) return;
+  const path = el.dataset.bind, type = el.dataset.type;
+  let v = el.value;
+  if (type === "bool") v = el.checked;
+  else if (type === "list") v = v.split(",").map(s => s.trim()).filter(Boolean);
+  else if (type === "lines") v = parseLines(v);
+  set(path, v);
+  if (el.dataset.live) refreshRow(el.dataset.live);
+});
+document.addEventListener("change", (e) => { const el = e.target.closest("[data-bind]"); if (el && el.type === "checkbox"){ set(el.dataset.bind, el.checked); } });
+
+/* ================= Onglets ================= */
+function renderTabs(){
+  const C = S.C, counts = { projets:C.projects?.length, certifs:C.certs?.length, parcours:C.formation?.length };
+  $("#tabs").innerHTML = TABS.map(([k, l]) => `<button class="tab" role="tab" id="tab-${k}" aria-controls="panel" aria-selected="${k === S.tab}" tabindex="${k === S.tab ? 0 : -1}" data-tab="${k}">${l}${counts[k] != null ? `<span class="n">${counts[k]}</span>` : ""}</button>`).join("");
+}
+$("#tabs").addEventListener("click", (e) => { const b = e.target.closest("[data-tab]"); if (!b) return; S.tab = b.dataset.tab; renderTabs(); render(); $("#panel").focus({ preventScroll:true }); });
+$("#tabs").addEventListener("keydown", (e) => {
+  const tabs = $$(".tab"), i = tabs.indexOf(document.activeElement); if (i < 0) return;
+  const k = { ArrowDown:1, ArrowRight:1, ArrowUp:-1, ArrowLeft:-1 }[e.key]; if (!k) return;
+  e.preventDefault(); const n = tabs[(i + k + tabs.length) % tabs.length]; n.click(); $(`#tab-${n.dataset.tab}`).focus();
+});
+
+/* ================= Rendu des rubriques ================= */
+function head(title, desc, extra = ""){ return `<div class="panel-head"><div><h2>${title}</h2><p class="muted">${desc}</p></div>${extra}</div>`; }
+function draftBanner(){
+  if (!S.draft) return "";
+  return `<div class="banner cut"><p>Un brouillon non publié du ${new Date(S.draft.at).toLocaleString("fr-FR")} a été retrouvé sur cet appareil.</p><button class="btn btn-sm" data-act="draft-load">Le reprendre</button><button class="btn btn-sm" data-act="draft-drop">L'ignorer</button></div>`;
+}
+const VIEWS = {};
+
+VIEWS.textes = () => {
+  const C = S.C; C.about ??= { blocks:[] }; C.about.blocks ??= [];
+  return head("Textes", "Le Hero, tes centres d'intérêt et la section À propos.") + `
+  <div class="box cut"><h3>Hero (haut de la page d'accueil)</h3>${bi("Titre", "hero.title")}${bi("Phrase de présentation", "hero.phrase", { area:true })}</div>
+  <div class="box cut"><h3>Ce que j'explore en ce moment</h3>${biLines("Centres d'intérêt", "interests")}</div>
+  <div class="box cut"><h3>À propos</h3>${bi("Présentation", "about.intro", { area:true, rows:4 })}</div>
+  <div class="items">${C.about.blocks.map((b, i) => `
+    <div class="box cut"><div class="panel-head"><h3>Bloc ${i + 1}</h3><div class="row-actions">${moveBtns("about.blocks", i, C.about.blocks.length)}<button class="btn btn-sm btn-danger" data-act="del" data-list="about.blocks" data-i="${i}">Supprimer</button></div></div>
+    ${bi("Titre", `about.blocks.${i}.title`)}${bi("Texte", `about.blocks.${i}.text`, { area:true, rows:4 })}</div>`).join("")}
+  </div>
+  <div><button class="btn btn-sm" data-act="add" data-list="about.blocks">${ICON.plus}Ajouter un bloc</button></div>
+  <div class="box cut"><h3>Mes objectifs</h3>${bi("À court terme", "about.goalsShort", { area:true, rows:4 })}${bi("À long terme", "about.goalsLong", { area:true })}</div>`;
+};
+
+function projRow(p, i, n){
+  const st = STATUSES.find(s => s[0] === p.status)?.[1] || p.status;
+  return `<div class="item-row">
+    ${p.img ? `<img class="thumb" src="${esc(imgSrc(p.img))}" alt="">` : `<span class="thumb" aria-hidden="true"></span>`}
+    <div class="ttl" data-row="projects.${i}">${esc(T(p.title).fr || "Projet sans titre")}<small>${esc(CATS.find(c => c[0] === p.cat)?.[1] || "")}</small></div>
+    <span class="badge ${p.status === "termine" ? "ok" : p.status === "cours" ? "warn" : "info"}">${esc(st)}</span>
+    ${p.featured ? `<span class="badge new">Mis en avant</span>` : ""}
+    <div class="acts">${moveBtns("projects", i, n)}<button class="btn btn-sm" data-act="toggle" data-key="projects" data-i="${i}" aria-expanded="${S.open.projects === i}">${S.open.projects === i ? "Fermer" : "Modifier"}</button><button class="btn btn-sm btn-danger" data-act="del" data-list="projects" data-i="${i}">Supprimer</button></div>
+  </div>`;
+}
+function projBody(p, i){
+  const b = `projects.${i}`; p.sections ??= {}; p.links ??= {}; p.gallery ??= [];
+  return `<div class="item-body">
+    ${bi("Titre", `${b}.title`)}
+    ${bi("Description courte", `${b}.desc`, { area:true, hint:"Une ou deux phrases, affichées sur la carte." })}
+    <div class="grid3">${select("Catégorie", `${b}.cat`, CATS)}${select("Statut", `${b}.status`, STATUSES)}${input("Date de début (pour le tri)", `${b}.start`, "month")}</div>
+    ${bi("Période affichée", `${b}.period`, { hint:"Exemple : Septembre 2026, ou Depuis octobre 2026." })}
+    <div class="grid2">${input("Adresse de la fiche (slug)", `${b}.slug`, "text", "ex. mon-projet")}<div class="field"><span class="lbl">Accueil</span>${checkbox("Mettre en avant", `${b}.featured`)}</div></div>
+    ${listInput("Technologies", `${b}.tech`, "Séparées par des virgules : Python, Docker, React…")}
+    ${listInput("Mots-clés pour la recherche", `${b}.keys`, "Séparés par des virgules.")}
+    <div class="box cut" style="background:var(--bg-deep)"><h3>Liens</h3><div class="grid2">${LINKS.map(([k, l]) => input(l, `${b}.links.${k}`, "url", "https://")).join("")}</div></div>
+    <div class="field"><span class="lbl">Image de la carte</span>
+      <div class="media">${p.img ? `<img src="${esc(imgSrc(p.img))}" alt="Image actuelle">` : `<div class="empty-img">Aucune image</div>`}
+        <div class="row-actions" style="justify-content:flex-start"><label class="btn btn-sm">Choisir une image<input type="file" accept="image/*" class="sr-only" data-upload="cover" data-i="${i}"></label>${p.img ? `<button class="btn btn-sm btn-danger" data-act="img-del" data-i="${i}">Retirer</button>` : ""}</div></div>
+      <p class="hint">Format paysage conseillé. L'image est réduite automatiquement.</p></div>
+    <div class="field"><span class="lbl">Captures d'écran (fiche du projet)</span>
+      <div class="gal">${p.gallery.map((g, k) => `<div class="gal-item"><img src="${esc(imgSrc(g.src))}" alt="">${bi("Légende", `${b}.gallery.${k}.caption`)}<div class="row-actions">${moveBtns(`${b}.gallery`, k, p.gallery.length)}<button class="btn btn-sm btn-danger" data-act="del" data-list="${b}.gallery" data-i="${k}">Retirer</button></div></div>`).join("")}</div>
+      <div><label class="btn btn-sm">${ICON.plus}Ajouter une capture<input type="file" accept="image/*" class="sr-only" multiple data-upload="gallery" data-i="${i}"></label></div></div>
+    <div class="field"><span class="lbl">Contenu de la fiche</span><p class="hint">Remplis seulement les parties utiles : les parties vides n'apparaissent pas sur le site. Plusieurs lignes deviennent une liste à puces.</p>
+      ${SECTIONS.map(([k, l]) => { const v = T(p.sections[k]); return `<details class="sec"${v.fr ? " open" : ""}><summary>${l}${v.fr ? `<span class="badge ok">rempli</span>` : `<span class="badge">vide</span>`}</summary><div class="sec-body">${bi(l, `${b}.sections.${k}`, { area:true, rows:4 })}</div></details>`; }).join("")}
+    </div>
+  </div>`;
+}
+VIEWS.projets = () => {
+  const L = S.C.projects ||= [];
+  return head("Projets", "L'ordre de la liste est l'ordre d'affichage des projets mis en avant. La grille se trie par date de début.", `<button class="btn btn-primary btn-sm" data-act="add" data-list="projects">${ICON.plus}Ajouter un projet</button>`)
+    + (L.length ? `<div class="items">${L.map((p, i) => `<div class="item${S.open.projects === i ? " open" : ""}">${projRow(p, i, L.length)}${S.open.projects === i ? projBody(p, i) : ""}</div>`).join("")}</div>`
+      : `<div class="empty"><p>Aucun projet pour l'instant.</p><button class="btn btn-primary btn-sm" data-act="add" data-list="projects">Ajouter un projet</button></div>`);
+};
+
+VIEWS.competences = () => {
+  const C = S.C; C.hard ??= []; C.soft ??= []; C.techRel ??= { preferred:[], explore:[], discover:[] };
+  const groups = (key, title) => `<div class="box cut"><div class="panel-head"><h3>${title}</h3><button class="btn btn-sm" data-act="add" data-list="${key}">${ICON.plus}Ajouter un groupe</button></div>
+    ${C[key].map((g, i) => `<div class="box cut" style="background:var(--bg-deep)"><div class="panel-head"><h3>${esc(T(g.group).fr || "Nouveau groupe")}</h3><div class="row-actions">${moveBtns(key, i, C[key].length)}<button class="btn btn-sm btn-danger" data-act="del" data-list="${key}" data-i="${i}">Supprimer</button></div></div>
+      ${bi("Nom du groupe", `${key}.${i}.group`)}${biLines("Compétences", `${key}.${i}.items`)}</div>`).join("") || `<p class="muted">Aucun groupe.</p>`}</div>`;
+  return head("Compétences", "Les onglets Hard Skills et Soft Skills, et le bloc « Technologies : où j'en suis ».")
+    + groups("hard", "Hard Skills") + groups("soft", "Soft Skills")
+    + `<div class="box cut"><h3>Technologies : où j'en suis</h3><p class="hint">La catégorie « Utilisées » se remplit seule avec les technologies de tes projets.</p>
+      ${listInput("Préférées", "techRel.preferred", "Séparées par des virgules.")}${listInput("À creuser", "techRel.explore")}${listInput("À découvrir", "techRel.discover")}</div>`;
+};
+
+function simpleList(key, title, desc, rowTitle, body, addLabel){
+  const L = S.C[key] ||= [];
+  return head(title, desc, `<button class="btn btn-primary btn-sm" data-act="add" data-list="${key}">${ICON.plus}${addLabel}</button>`)
+    + (L.length ? `<div class="items">${L.map((x, i) => `<div class="item${S.open[key] === i ? " open" : ""}"><div class="item-row"><div class="ttl" data-row="${key}.${i}">${rowTitle(x)}</div><div class="acts">${moveBtns(key, i, L.length)}<button class="btn btn-sm" data-act="toggle" data-key="${key}" data-i="${i}" aria-expanded="${S.open[key] === i}">${S.open[key] === i ? "Fermer" : "Modifier"}</button><button class="btn btn-sm btn-danger" data-act="del" data-list="${key}" data-i="${i}">Supprimer</button></div></div>${S.open[key] === i ? `<div class="item-body">${body(`${key}.${i}`, x)}</div>` : ""}</div>`).join("")}</div>`
+      : `<div class="empty"><p>Rien pour l'instant.</p><button class="btn btn-primary btn-sm" data-act="add" data-list="${key}">${addLabel}</button></div>`);
+}
+VIEWS.parcours = () => simpleList("formation", "Parcours", "Tes diplômes et formations, du plus récent au plus ancien.",
+  (f) => `${esc(T(f.title).fr || "Nouvelle formation")}<small>${esc(f.school || "")} · ${esc(T(f.period).fr || "")}</small>`,
+  (b) => `${bi("Diplôme ou formation", `${b}.title`)}${input("Établissement", `${b}.school`)}${bi("Lieu", `${b}.place`)}${bi("Période", `${b}.period`, { hint:"Exemple : Janvier 2026 – aujourd'hui" })}${checkbox("Formation en cours", `${b}.current`)}`,
+  "Ajouter une formation");
+VIEWS.certifs = () => simpleList("certs", "Certifications", "Les badges obtenus et les attestations de participation.",
+  (c) => `${esc(c.name || "Nouvelle certification")}<small>${esc(c.issuer || "")} · ${esc(T(c.date).fr || "date à préciser")}</small>`,
+  (b) => `<div class="grid2">${input("Nom", `${b}.name`)}${input("Organisme", `${b}.issuer`)}</div>
+    ${bi("Plateforme", `${b}.via`, { hint:"Exemple : Badge Credly (facultatif)." })}
+    <div class="grid2">${select("Statut", `${b}.status`, [["ok","Obtenue"],["part","Participation"]])}<div></div></div>
+    ${bi("Type affiché", `${b}.kind`, { hint:"Exemple : Badge obtenu / Badge earned." })}
+    ${bi("Date d'obtention", `${b}.date`, { hint:"Exemple : 22 septembre 2026 / September 22, 2026" })}
+    ${bi("Ce que couvre la certification", `${b}.skills`, { area:true })}
+    <div class="grid2">${input("Lien de vérification", `${b}.url`, "url", "https://")}${input("Identifiant (facultatif)", `${b}.id`)}</div>`,
+  "Ajouter une certification");
+VIEWS.contact = () => { S.C.contact ??= {}; return head("Contact", "Les coordonnées affichées dans la section Contact et dans le pied de page.")
+  + `<div class="box cut"><div class="grid2">${input("Adresse e-mail", "contact.email", "email")}${input("Téléphone", "contact.phone", "tel", "+229…")}${input("Profil GitHub", "contact.github", "url", "https://github.com/…")}${input("Profil LinkedIn", "contact.linkedin", "url", "https://www.linkedin.com/in/…")}</div>
+  <p class="hint">Le formulaire de contact envoie les messages à l'adresse e-mail indiquée ici.</p></div>`; };
+VIEWS.cv = () => {
+  S.C.cv ??= {}; const cv = (l) => S.C.cv[l] ||= {};
+  const box = (l, title) => `<div class="box cut"><h3>${title}</h3>
+    <div class="media">${cv(l).img ? `<img src="${esc(imgSrc(cv(l).img))}" alt="Aperçu actuel" style="aspect-ratio:210/297;width:150px">` : `<div class="empty-img" style="aspect-ratio:210/297;width:150px">Pas d'aperçu</div>`}
+      <div style="display:grid;gap:.6rem">
+        <p>PDF : ${cv(l).pdf ? `<a href="${esc(S.pending.get(cv(l).pdf)?.preview || rawUrl(cv(l).pdf))}" target="_blank" rel="noopener">${esc(cv(l).pdf.split("/").pop())}</a>${S.pending.has(cv(l).pdf) ? ' <span class="badge new">à publier</span>' : ""}` : `<span class="muted">aucun</span>`}</p>
+        <div class="row-actions" style="justify-content:flex-start"><label class="btn btn-sm">Remplacer le PDF<input type="file" accept="application/pdf" class="sr-only" data-upload="cvpdf" data-lang="${l}"></label><label class="btn btn-sm">Remplacer l'aperçu<input type="file" accept="image/*" class="sr-only" data-upload="cvimg" data-lang="${l}"></label></div>
+        <p class="hint">L'aperçu est l'image de la première page affichée sur le site. Fais une capture du PDF ouvert, ou exporte la page en image.</p>
+      </div></div></div>`;
+  return head("CV", "Les deux versions téléchargeables depuis le site.") + box("fr", "CV en français") + box("en", "CV en anglais");
+};
+
+function render(){
+  const p = $("#panel"), y = scrollY;
+  p.innerHTML = draftBanner() + VIEWS[S.tab]();
+  p.setAttribute("aria-labelledby", `tab-${S.tab}`);
+  scrollTo(0, y);
+}
+function refreshRow(path){ /* met à jour le titre d'une ligne pendant la saisie */ }
+
+/* ================= Actions (ajout, suppression, ordre, ouverture) ================= */
+const NEW = {
+  projects:() => ({ id:"p-" + Date.now().toString(36), slug:"", featured:false, title:{ fr:"Nouveau projet", en:"" }, desc:{ fr:"", en:"" }, cat:"web", status:"cours", period:{ fr:"", en:"" }, start:new Date().toISOString().slice(0, 7), updated:today(), tech:[], keys:[], img:"", gallery:[], sections:{}, links:{} }),
+  certs:() => ({ name:"", issuer:"", via:{ fr:"", en:"" }, kind:{ fr:"Badge obtenu", en:"Badge earned" }, status:"ok", date:{ fr:"", en:"" }, skills:{ fr:"", en:"" }, url:"", id:"" }),
+  formation:() => ({ title:{ fr:"", en:"" }, school:"", place:{ fr:"Cotonou, Bénin", en:"Cotonou, Benin" }, period:{ fr:"", en:"" }, current:false }),
+  hard:() => ({ group:{ fr:"Nouveau groupe", en:"" }, items:[] }),
+  soft:() => ({ group:{ fr:"Nouveau groupe", en:"" }, items:[] }),
+  "about.blocks":() => ({ title:{ fr:"", en:"" }, text:{ fr:"", en:"" } })
+};
+document.addEventListener("click", async (e) => {
+  const b = e.target.closest("[data-act]"); if (!b || !S.C) return;
+  const act = b.dataset.act, list = b.dataset.list, i = +b.dataset.i;
+  if (act === "draft-load"){
+    const lost = new Set(S.draft.pending || []); S.C = S.draft.C; S.draft = null; store.del("adm-draft");
+    (S.C.projects || []).forEach(p => { if (lost.has(p.img)) p.img = ""; p.gallery = (p.gallery || []).filter(g => !lost.has(g.src)); });
+    ["fr", "en"].forEach(l => { const c = (S.C.cv || {})[l]; if (c){ if (lost.has(c.img)) c.img = ""; if (lost.has(c.pdf)) c.pdf = ""; } });
+    markDirty(); renderTabs(); render();
+    toast(lost.size ? "Brouillon repris. Les fichiers ajoutés avant la fermeture sont à choisir de nouveau." : "Brouillon repris.", "ok"); return;
+  }
+  if (act === "draft-drop"){ S.draft = null; store.del("adm-draft"); render(); return; }
+  if (act === "toggle"){ const k = b.dataset.key; S.open[k] = S.open[k] === i ? null : i; render(); return; }
+  if (act === "add"){
+    const arr = get(list) || (set_silent(list, []), get(list)); const item = NEW[list] ? NEW[list]() : {};
+    if (list === "projects" || list === "certs" || list === "formation"){ arr.unshift(item); S.open[list] = 0; } else arr.push(item);
+    markDirty(); renderTabs(); render(); toast("Élément ajouté. Pense à publier.", "ok"); return;
+  }
+  if (act === "del"){
+    const arr = get(list), it = arr[i], name = it && (T(it.title).fr || it.name || T(it.group).fr || "cet élément");
+    if (!confirm(`Supprimer « ${name} » ? Tu pourras encore annuler en ne publiant pas.`)) return;
+    arr.splice(i, 1); if (S.open[list] === i) S.open[list] = null; markDirty(); renderTabs(); render(); return;
+  }
+  if (act === "up" || act === "down"){
+    const arr = get(list), j = act === "up" ? i - 1 : i + 1; if (j < 0 || j >= arr.length) return;
+    [arr[i], arr[j]] = [arr[j], arr[i]]; if (S.open[list] === i) S.open[list] = j; markDirty(); render(); return;
+  }
+  if (act === "img-del"){ S.C.projects[i].img = ""; markDirty(); render(); return; }
+});
+
+/* ================= Fichiers (images, PDF) ================= */
+function readDataURL(file){ return new Promise((res, rej) => { const r = new FileReader(); r.onload = () => res(r.result); r.onerror = () => rej(r.error); r.readAsDataURL(file); }); }
+async function compress(file, max = 1600){
+  const url = await readDataURL(file);
+  if (file.type === "image/svg+xml" || file.type === "image/gif") return url;
+  const img = await new Promise((res, rej) => { const im = new Image(); im.onload = () => res(im); im.onerror = rej; im.src = url; });
+  const k = Math.min(1, max / Math.max(img.width, img.height)), c = document.createElement("canvas");
+  c.width = Math.round(img.width * k); c.height = Math.round(img.height * k);
+  c.getContext("2d").drawImage(img, 0, 0, c.width, c.height);
+  return c.toDataURL("image/jpeg", .84);
+}
+function addPending(path, dataUrl){ S.pending.set(path, { b64:dataUrl.split(",")[1], preview:dataUrl }); }
+document.addEventListener("change", async (e) => {
+  const inp = e.target.closest("[data-upload]"); if (!inp || !inp.files.length) return;
+  const kind = inp.dataset.upload, i = +inp.dataset.i;
+  try{
+    for (const file of [...inp.files]){
+      if (kind === "cvpdf"){
+        if (file.type !== "application/pdf") throw new Error("Choisis un fichier PDF.");
+        if (file.size > 8e6) throw new Error("Le PDF dépasse 8 Mo.");
+        const l = inp.dataset.lang, path = `cv/Avoce_Franck_Ash_Paolo_${l}.pdf`;
+        addPending(path, await readDataURL(file)); S.C.cv[l].pdf = path; S.C.cv[l].name = path.split("/").pop();
+      } else {
+        if (!file.type.startsWith("image/")) throw new Error("Choisis une image (JPG, PNG ou WebP).");
+        const data = await compress(file, kind === "cvimg" ? 1400 : 1600);
+        if (kind === "cvimg"){ const l = inp.dataset.lang, path = `cv/apercu_${l}_${Date.now().toString(36)}.jpg`; addPending(path, data); S.C.cv[l].img = path; }
+        else {
+          const p = S.C.projects[i], base = slugify(p.slug || T(p.title).fr) || "projet", path = `images/${base}-${Date.now().toString(36)}${Math.random().toString(36).slice(2, 5)}.jpg`;
+          addPending(path, data);
+          if (kind === "cover") p.img = path; else (p.gallery ||= []).push({ src:path, caption:{ fr:"", en:"" } });
+          p.updated = today();
+        }
+      }
+    }
+    markDirty(); render(); toast("Fichier ajouté. Il sera envoyé à la publication.", "ok");
+  }catch(err){ toast(err.message || "Fichier illisible.", "bad"); }
+  inp.value = "";
+});
+
+/* ================= Vérifications avant publication ================= */
+function validate(){
+  const errs = [], C = S.C, slugs = new Set();
+  (C.projects || []).forEach((p, i) => {
+    const t = T(p.title).fr.trim(); if (!t) errs.push(`Projet n° ${i + 1} : le titre en français est vide.`);
+    if (!p.slug) p.slug = slugify(t) || "projet-" + (i + 1);
+    p.slug = slugify(p.slug);
+    if (slugs.has(p.slug)) errs.push(`Deux projets ont la même adresse « ${p.slug} ». Change le slug de l'un d'eux.`);
+    slugs.add(p.slug); p.id ||= "p-" + p.slug;
+    Object.entries(p.links || {}).forEach(([k, v]) => { if (v && !/^https?:\/\//.test(v)) errs.push(`Projet « ${t} » : le lien « ${k} » doit commencer par https://`); if (!v) delete p.links[k]; });
+  });
+  (C.certs || []).forEach((c, i) => { if (!c.name.trim()) errs.push(`Certification n° ${i + 1} : le nom est vide.`); if (c.url && !/^https?:\/\//.test(c.url)) errs.push(`Certification « ${c.name} » : le lien doit commencer par https://`); });
+  (C.formation || []).forEach((f, i) => { if (!T(f.title).fr.trim()) errs.push(`Formation n° ${i + 1} : l'intitulé est vide.`); });
+  if (C.contact?.email && !/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(C.contact.email)) errs.push("Contact : l'adresse e-mail n'est pas valide.");
+  /* l'anglais vide reprend le français */
+  const fill = (x) => { if (x && typeof x === "object"){ if ("fr" in x && "en" in x && Object.keys(x).length === 2){ if (!x.en) x.en = x.fr; } else Object.values(x).forEach(fill); } };
+  fill(C);
+  return errs;
+}
+
+/* ================= Publication ================= */
+$("#publishBtn").addEventListener("click", publish);
+async function publish(){
+  if (!S.dirty && !S.pending.size){ toast("Rien à publier : tout est déjà en ligne.", "ok"); return; }
+  const errs = validate();
+  if (errs.length){ toast("À corriger avant de publier :\n" + errs.slice(0, 4).join("\n"), "bad"); return; }
+  const dlg = $("#pubDialog"), steps = $("#pubSteps"), msg = $("#pubMsg"), close = $("#pubClose");
+  const files = [...S.pending.entries()];
+  steps.innerHTML = files.map(([p]) => `<li data-p="${esc(p)}">${esc(p.split("/").pop())}</li>`).join("") + `<li data-p="content">Contenu du site</li>`;
+  msg.textContent = ""; close.disabled = true; $("#pubTitle").textContent = "Publication en cours"; dlg.showModal();
+  const mark = (p, c) => { const li = steps.querySelector(`[data-p="${CSS.escape(p)}"]`); if (li) li.className = c; };
+  try{
+    for (const [path, f] of files){
+      mark(path, "run");
+      await putFile(path, f.b64, `Admin : ajout de ${path}`, await getSha(path));
+      mark(path, "done"); S.pending.delete(path);
+    }
+    mark("content", "run");
+    S.C.version = (S.C.version || 1);
+    const text = JSON.stringify(S.C, null, 1);
+    let res;
+    try{ res = await gh(contentPath("data/content.json"), { method:"PUT", body:JSON.stringify({ message:"Admin : mise à jour du contenu", content:b64enc(text), sha:S.sha, branch:S.cfg.branch }) }); }
+    catch(e){
+      if (e.status !== 409 && e.status !== 422) throw e;
+      if (!confirm("Le contenu a été modifié ailleurs depuis ta connexion. Remplacer par ta version ?")) throw new Error("Publication annulée. Recharge la page pour récupérer la dernière version.");
+      res = await gh(contentPath("data/content.json"), { method:"PUT", body:JSON.stringify({ message:"Admin : mise à jour du contenu", content:b64enc(text), sha:await getSha("data/content.json"), branch:S.cfg.branch }) });
+    }
+    S.sha = res.content.sha; S.raw = text; mark("content", "done");
+    S.dirty = false; store.del("adm-draft"); updateState(); renderTabs(); render();
+    $("#pubTitle").textContent = "Publié";
+    msg.textContent = "C'est en ligne. Le site affichera les changements d'ici une à deux minutes (parfois jusqu'à dix, le temps que GitHub vide son cache).";
+  }catch(err){
+    steps.querySelectorAll(".run").forEach(li => li.className = "fail");
+    $("#pubTitle").textContent = "Publication interrompue";
+    msg.textContent = (err.status === 401 ? "Le jeton n'est plus valide. Reconnecte-toi avec un nouveau jeton." : err.message || "Erreur inconnue.") + " Les fichiers déjà envoyés sont conservés ; relance la publication pour finir.";
+    updateState();
+  }finally{ close.disabled = false; close.focus(); }
+}
+$("#pubClose").addEventListener("click", () => $("#pubDialog").close());
+
+/* ================= Notifications ================= */
+function toast(text, kind = ""){
+  const t = document.createElement("div"); t.className = "toast " + kind; t.style.whiteSpace = "pre-line"; t.textContent = text;
+  $("#toasts").appendChild(t); setTimeout(() => t.remove(), kind === "bad" ? 8000 : 3500);
+}
+
+/* reconnexion automatique */
+const sess = store.get("adm-cfg-session", null) || (saved?.remember ? saved : null);
+if (sess?.token){ $("#lgToken").value = sess.token; $("#lgRemember").checked = !!sess.remember; $("#loginForm").requestSubmit(); }
+})();
+</script>
+</body>
+</html>
